@@ -1,0 +1,6 @@
+name: dart_properties
+description: A simple Properties implementation
+dependencies:
+  browser: any
+dev_dependencies:
+  unittest: any
