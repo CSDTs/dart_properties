@@ -1,16 +1,16 @@
 part of dart_properties;
 
 class Properties {
-  Map<String, String> _map;
+  Map<String, String> map;
   
   /**
    * Creates a properties objects.
    * 
    * If no default map is provided, an empty one is created.
    */
-  Properties([this._map]) {
-    if(_map == null) {
-      _map = new Map<String, String>();
+  Properties([this.map]) {
+    if(map == null) {
+      map = new Map<String, String>();
     }
   }
   
@@ -40,7 +40,7 @@ class Properties {
    * Or an iterable with zero elements if there are no property names.
    */
   Iterable propertyNames() {
-    return null;
+    return new List<String>();
   }
   
   /* !! I was having trouble getting this to run the unit tests...
