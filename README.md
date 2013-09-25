@@ -5,6 +5,8 @@ This is a very simply Dart library to provide "properties" in a similiar manner 
 
 It currently does not look anywhere for properties, and must be told to look by the main program. This behavior may change in a later version.
 
+[![Build Status](https://drone.io/github.com/GK-12/dart_properties/status.png)](https://drone.io/github.com/GK-12/dart_properties/latest)
+
 Sample usage
 ============
 
