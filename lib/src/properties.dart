@@ -18,11 +18,11 @@ class Properties {
    * Returns the value of property [key], or [default].
    * 
    * Searches the available properties for a value
-   *  called [key]. If it not found, return def. If
-   *  def is ommitted, return null
+   *  called [key]. If it is not found, return def. If
+   *  def is omitted, return null
    */
   String getProperty(String key, [String def]) {
-    return null;
+    return ((this.map[key] != null) ? this.map[key] : def);
   }
   
   /**
@@ -31,6 +31,51 @@ class Properties {
    * If there is no previous value, return null.
    */
   String setProperty(String key, String value) {
+    if (this.map[key] != null) {
+      var prev = this.map[key];
+      this.map[key] = value;
+      return prev;
+    }
+    else {
+      this.map[key] = value;
+      return null;
+    }
+  }
+  
+  /**
+   * Populates the properties with data from [data]
+   */
+  void loadJSON(String data) {
+    var map = parse(data);
+    
+    if (this.map != null)
+    {
+      this.map.addAll(map);
+    }
+    else this.map = map;
+  }
+  
+  /**
+   * Populates the properties with data from [data]
+   */
+  void loadXML(String data) {
+    
+  }
+  
+  /**
+   * Returns a JSON string of all the current properties.
+   */
+  String printJSON() {
+    if (this.map != null) {
+      return stringify(this.map);
+    }
+    return null;
+  }
+  
+  /**
+   * Returns a XML string of all the current properties
+   */
+  String printXML() {
     return null;
   }
   
@@ -40,7 +85,10 @@ class Properties {
    * Or an iterable with zero elements if there are no property names.
    */
   Iterable propertyNames() {
-    return new List<String>();
+    if (this.map != null) {
+      return this.map.keys;
+    }
+    else return new List<String>();
   }
   
   /* !! I was having trouble getting this to run the unit tests...
@@ -61,34 +109,6 @@ class Properties {
   /*void load(Future<EventTarget> request, [bool blocking = false]) {
     
   }*/
-  
-  /**
-   * Populates the properties with data from [data]
-   */
-  void loadJSON(String data) {
-    
-  }
-
-  /**
-   * Populates the properties with data from [data]
-   */
-  void loadXML(String data) {
-    
-  }
-  
-  /**
-   * Returns a JSON string of all the current properties.
-   */
-  String printJSON() {
-    return null;
-  }
-  
-  /**
-   * Returns a XML string of all the current properties
-   */
-  String printXML() {
-    return null;
-  }
   
   /**
    * Singleton that should be used in most cases.
