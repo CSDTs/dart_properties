@@ -5,6 +5,8 @@ This is a very simply Dart library to provide "properties" in a similiar manner 
 
 It currently does not look anywhere for properties, and must be told to look by the main program. This behavior may change in a later version.
 
+At the moment, this library is only capable of loading properties from JSON. This may be fixed in the future, and will be if you need it (just create a ticket), but for the demand for that feature is very low.
+
 [![Build Status](https://drone.io/github.com/GK-12/dart_properties/status.png)](https://drone.io/github.com/GK-12/dart_properties/latest)
 
 Sample usage

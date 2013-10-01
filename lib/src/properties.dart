@@ -58,9 +58,9 @@ class Properties {
   /**
    * Populates the properties with data from [data]
    */
-  void loadXML(String data) {
-    
-  }
+//  void loadXML(String data) {
+//    
+//  }
   
   /**
    * Returns a JSON string of all the current properties.
@@ -75,9 +75,9 @@ class Properties {
   /**
    * Returns a XML string of all the current properties
    */
-  String printXML() {
-    return null;
-  }
+//  String printXML() {
+//    return null;
+//  }
   
   /**
    * Returns an iterable consisting of all property names.
@@ -90,25 +90,6 @@ class Properties {
     }
     else return new List<String>();
   }
-  
-  /* !! I was having trouble getting this to run the unit tests...
-   *  The reliance on dart:html would not work without a browser.
-   * Loads properties from request file.
-   * 
-   * If blocking is true, this function will wait for the
-   *  request to complete and return before returning.
-   * 
-   * Supported file formats are:
-   *  - XML
-   *  - JSON
-   * These file formats should be set by the MIME type of the document.
-   *  
-   * Example: 
-   *  Properties.getProperties().load(HttpRequest.request("http://127.0.0.1/config"))
-   */
-  /*void load(Future<EventTarget> request, [bool blocking = false]) {
-    
-  }*/
   
   /**
    * Singleton that should be used in most cases.

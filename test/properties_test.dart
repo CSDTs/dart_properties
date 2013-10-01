@@ -38,21 +38,21 @@ main() {
     expect(p.getProperty("featureA"), "enabled");
   });
   
-  test("able to load properties from XML", () {
-    String xml = '''
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
-    <properties>
-    <comment>Hi</comment>
-    <entry key="featureA">enabled</entry>
-    </properties>
-    ''';
-    
-    Properties p = new Properties();
-    p.loadXML(xml);
-    
-    expect(p.getProperty("featureA"), "enabled");
-  });
+//  test("able to load properties from XML", () {
+//    String xml = '''
+//    <?xml version="1.0" encoding="UTF-8"?>
+//    <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+//    <properties>
+//    <comment>Hi</comment>
+//    <entry key="featureA">enabled</entry>
+//    </properties>
+//    ''';
+//    
+//    Properties p = new Properties();
+//    p.loadXML(xml);
+//    
+//    expect(p.getProperty("featureA"), "enabled");
+//  });
   
   test("able to print properties to JSON", () {
     String json = "{\"featureA\":\"enabled\"}";
@@ -65,21 +65,21 @@ main() {
     expect(p.printJSON(), json);
   });
   
-  test("able to print properties to XML", () {
-    String xml = '''
-    <?xml version="1.0" encoding="UTF-8"?>
-    <properties>
-    <entry key="featureA">enabled</entry>
-    </properties>
-    ''';
-   
-    Map<String, String> map = new Map<String, String>();
-    map['featureA'] = "enabled";
-    
-    Properties p = new Properties(map);
-    
-    expect(p.printXML(), xml);
-  });
+//  test("able to print properties to XML", () {
+//    String xml = '''
+//    <?xml version="1.0" encoding="UTF-8"?>
+//    <properties>
+//    <entry key="featureA">enabled</entry>
+//    </properties>
+//    ''';
+//   
+//    Map<String, String> map = new Map<String, String>();
+//    map['featureA'] = "enabled";
+//    
+//    Properties p = new Properties(map);
+//    
+//    expect(p.printXML(), xml);
+//  });
   
   test("able to get a list of all defined properties", () {
     Map<String, String> map = new Map<String, String>();
