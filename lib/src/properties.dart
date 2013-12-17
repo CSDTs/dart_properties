@@ -46,7 +46,7 @@ class Properties {
    * Populates the properties with data from [data]
    */
   void loadJSON(String data) {
-    var map = parse(data);
+    var map = JSON.decode(data);
     
     if (this.map != null)
     {
@@ -67,7 +67,7 @@ class Properties {
    */
   String printJSON() {
     if (this.map != null) {
-      return stringify(this.map);
+      return JSON.encode(this.map);
     }
     return null;
   }
